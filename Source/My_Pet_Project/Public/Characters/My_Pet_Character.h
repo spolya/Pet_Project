@@ -20,17 +20,17 @@ class MY_PET_PROJECT_API AMy_Pet_Character : public ACharacter
 	GENERATED_BODY()
 
 private:
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))
-	UCameraComponent* Camera;
+	UPROPERTY(Category = "Components", VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
+	TObjectPtr<UCameraComponent> Camera;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))
-	USkeletalMeshComponent* HandsMesh;
+	UPROPERTY(Category = "Components", VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
+	TObjectPtr<USkeletalMeshComponent> HandsMesh;
 
 public:
 	// Sets default values for this character's properties
 	AMy_Pet_Character();
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Inputs")
+	UPROPERTY(Category = "Inputs", EditDefaultsOnly, BlueprintReadWrite)
 	TObjectPtr<UInputMappingContext> PlayerInputMappingContext;
 
 protected:
